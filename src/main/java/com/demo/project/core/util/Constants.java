@@ -1,4 +1,4 @@
-package com.cabal.project.core.util;
+package com.demo.project.core.util;
 
 public final class Constants {
 

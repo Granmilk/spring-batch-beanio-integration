@@ -1,4 +1,4 @@
-package com.cabal.project;
+package com.demo.project;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

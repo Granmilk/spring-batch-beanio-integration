@@ -1,4 +1,4 @@
-package com.cabal.project.batch.datasource;
+package com.demo.project.batch.datasource;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.boot.jdbc.DataSourceBuilder;
@@ -15,7 +15,7 @@ import javax.sql.DataSource;
 public class BatchDataSourceConfiguration {
 
     @Bean
-    @ConfigurationProperties(prefix = "spring.batch.datasource")
+    @ConfigurationProperties(prefix = "spring.datasource")
     public DataSource batchDataSource() {
         return DataSourceBuilder.create().build();
     }

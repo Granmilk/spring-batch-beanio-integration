@@ -1,6 +1,6 @@
-package com.cabal.project.core.identification.merchant;
+package com.demo.project.core.identification.merchant;
 
-import com.cabal.project.core.util.Constants;
+import com.demo.project.core.util.Constants;
 import org.beanio.annotation.Field;
 import org.beanio.annotation.Record;
 import org.beanio.builder.Align;

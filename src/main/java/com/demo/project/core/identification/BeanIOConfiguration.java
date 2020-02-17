@@ -1,9 +1,9 @@
-package com.cabal.project.core.identification;
+package com.demo.project.core.identification;
 
-import com.cabal.project.core.identification.merchant.AddressRecord;
-import com.cabal.project.core.identification.merchant.MerchantRecord;
-import com.cabal.project.core.identification.merchant.OwnerRecord;
-import com.cabal.project.core.util.Constants;
+import com.demo.project.core.identification.merchant.AddressRecord;
+import com.demo.project.core.identification.merchant.MerchantRecord;
+import com.demo.project.core.identification.merchant.OwnerRecord;
+import com.demo.project.core.util.Constants;
 import org.beanio.StreamFactory;
 import org.beanio.builder.FixedLengthParserBuilder;
 import org.beanio.builder.StreamBuilder;

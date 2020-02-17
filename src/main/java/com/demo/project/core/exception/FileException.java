@@ -1,4 +1,4 @@
-package com.cabal.project.core.exception;
+package com.demo.project.core.exception;
 
 public abstract class FileException extends RuntimeException {
 
