@@ -1,0 +1,36 @@
+package com.cabal.project.core.identification;
+
+import com.cabal.project.core.identification.merchant.AddressRecord;
+import com.cabal.project.core.identification.merchant.MerchantRecord;
+import com.cabal.project.core.identification.merchant.OwnerRecord;
+import com.cabal.project.core.util.Constants;
+import org.beanio.StreamFactory;
+import org.beanio.builder.FixedLengthParserBuilder;
+import org.beanio.builder.StreamBuilder;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+@Configuration
+public class BeanIOConfiguration {
+
+    @Bean
+    public StreamFactory buildStreamFactory() {
+
+        final String DELIMITED_FORMAT = "fixedlength";
+
+        StreamFactory streamFactory = StreamFactory.newInstance();
+
+        StreamBuilder streamBuilderFixedLength = new StreamBuilder(Constants.REGISTER_BEANIO_STREAM)
+                .format(DELIMITED_FORMAT)
+                .ignoreUnidentifiedRecords()
+                .parser(new FixedLengthParserBuilder())
+                .addRecord(MerchantRecord.class)
+                .addRecord(OwnerRecord.class)
+                .addRecord(AddressRecord.class);
+
+        streamFactory.define(streamBuilderFixedLength);
+
+        return streamFactory;
+    }
+
+}
