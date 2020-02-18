@@ -2,6 +2,7 @@ package com.demo.project.batch.job.step;
 
 import com.demo.project.core.domain.entity.MerchantEntity;
 import com.demo.project.core.identification.merchant.IdentificationRecord;
+import com.demo.project.core.util.Constants;
 import org.beanio.StreamFactory;
 import org.beanio.spring.BeanIOFlatFileItemReader;
 import org.springframework.batch.core.configuration.annotation.DefaultBatchConfigurer;
@@ -25,7 +26,7 @@ public class FileLoaderStepConfiguration extends DefaultBatchConfigurer {
         BeanIOFlatFileItemReader<IdentificationRecord> beanIOFlatFileItemReader = new BeanIOFlatFileItemReader<>();
 //        beanIOFlatFileItemReader.setResource();
         beanIOFlatFileItemReader.setStreamFactory(streamFactory);
-        beanIOFlatFileItemReader.setStreamName("fixedlength");
+        beanIOFlatFileItemReader.setStreamName(Constants.REGISTER_BEANIO_STREAM);
         beanIOFlatFileItemReader.afterPropertiesSet();
 
         return beanIOFlatFileItemReader;

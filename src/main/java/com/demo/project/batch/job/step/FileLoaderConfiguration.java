@@ -2,11 +2,9 @@ package com.demo.project.batch.job.step;
 
 import com.demo.project.core.domain.entity.MerchantEntity;
 import com.demo.project.core.identification.merchant.IdentificationRecord;
-import com.demo.project.core.service.ServiceFactory;
 import org.springframework.batch.core.Step;
 import org.springframework.batch.core.configuration.annotation.DefaultBatchConfigurer;
 import org.springframework.batch.core.configuration.annotation.EnableBatchProcessing;
-import org.springframework.batch.core.configuration.annotation.JobScope;
 import org.springframework.batch.core.configuration.annotation.StepBuilderFactory;
 import org.springframework.batch.item.ItemProcessor;
 import org.springframework.batch.item.ItemReader;
@@ -30,10 +28,10 @@ public class FileLoaderConfiguration extends DefaultBatchConfigurer {
         this.stepBuilderFactory = stepBuilderFactory;
     }
 
-    @Override
     @Autowired
-    public void setDataSource(@Qualifier("dataSource") DataSource dataSource) {
-        super.setDataSource(dataSource);
+    @Override
+    public void setDataSource(@Qualifier("batchDataSource") DataSource batchDataSource) {
+        super.setDataSource(batchDataSource);
     }
 
     @Bean
