@@ -1,16 +1,18 @@
 package com.demo.project.core.domain.entity;
 
+import com.demo.project.core.util.Constants;
 import lombok.Setter;
+import lombok.experimental.SuperBuilder;
 
 import javax.persistence.*;
 import javax.validation.constraints.Size;
 import java.io.Serializable;
-import java.time.LocalDate;
 
 @Entity
+@SuperBuilder
 @Table(name = "MERCHANT")
 @SequenceGenerator(name = "merchantSeq",
-        sequenceName = "SQ_MERCH",
+        sequenceName = Constants.IdentificationSequenceName.MERCHANT,
         allocationSize = 1)
 public class MerchantEntity implements Serializable {
 
@@ -20,10 +22,10 @@ public class MerchantEntity implements Serializable {
     private Long merchantSeq;
 
     @Column(name = "CD_MERCHANT")
-    protected Long merchantId;
+    protected String merchantId;
 
     @Column(name = "NM_TRADE_NAME")
-    protected Long tradeName;
+    protected String tradeName;
 
     @Size(min = 11, max = 14)
     @Column(name = "NU_DOCUMENT")
@@ -33,7 +35,7 @@ public class MerchantEntity implements Serializable {
     protected Integer documentType;
 
     @Column(name = "DT_REGISTRATION")
-    protected LocalDate registrationDate;
+    protected String registrationDate;
 
     @Column(name = "HR_REGISTRATION")
     protected String registrationHour;

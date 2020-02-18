@@ -1,8 +1,6 @@
 package com.demo.project.core.identification;
 
-import com.demo.project.core.identification.merchant.AddressRecord;
 import com.demo.project.core.identification.merchant.MerchantRecord;
-import com.demo.project.core.identification.merchant.OwnerRecord;
 import com.demo.project.core.util.Constants;
 import org.beanio.StreamFactory;
 import org.beanio.builder.FixedLengthParserBuilder;
@@ -24,9 +22,7 @@ public class BeanIOConfiguration {
                 .format(DELIMITED_FORMAT)
                 .ignoreUnidentifiedRecords()
                 .parser(new FixedLengthParserBuilder())
-                .addRecord(MerchantRecord.class)
-                .addRecord(OwnerRecord.class)
-                .addRecord(AddressRecord.class);
+                .addRecord(MerchantRecord.class);
 
         streamFactory.define(streamBuilderFixedLength);
 

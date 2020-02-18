@@ -17,4 +17,12 @@ public final class Constants {
         public static final String ADDRESS_REGISTER_ID = "E";
 
     }
+
+    public static class IdentificationSequenceName {
+
+        private IdentificationSequenceName() {
+        }
+
+        public static final String MERCHANT = "SQ_MERCH";
+    }
 }

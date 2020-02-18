@@ -20,12 +20,12 @@ public class MerchantRecord extends RegisterDataRecord {
         return recordId;
     }
 
-    @Field(maxLength = 8, required = true, ordinal = 2)
+    @Field(length = 8, required = true, ordinal = 2)
     public String getMerchantId() {
         return merchantId;
     }
 
-    @Field(maxLength = 30, required = true, ordinal = 3)
+    @Field(length = 30, required = true, ordinal = 3)
     public String getTradeName() {
         return tradeName;
     }
@@ -36,17 +36,17 @@ public class MerchantRecord extends RegisterDataRecord {
         return cnpj;
     }
 
-    @Field(maxLength = 1, ordinal = 5)
+    @Field(length = 1, ordinal = 5)
     public Integer getTypeDocument() {
         return typeDocument;
     }
 
-    @Field(maxLength = 8, format = "yyyyMMdd", ordinal = 6)
+    @Field(length = 8, ordinal = 6)
     public String getDate() {
         return date;
     }
 
-    @Field(maxLength = 8, ordinal = 7)
+    @Field(length = 8, ordinal = 7)
     public String getSchedule() {
         return schedule;
     }

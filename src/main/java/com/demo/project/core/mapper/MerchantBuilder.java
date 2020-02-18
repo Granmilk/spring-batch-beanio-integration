@@ -1,12 +1,29 @@
 package com.demo.project.core.mapper;
 
 import com.demo.project.core.domain.entity.MerchantEntity;
+import com.demo.project.core.identification.merchant.MerchantRecord;
 
-public abstract class MerchantBuilder {
+public class MerchantBuilder extends IdentificationBuilder {
 
-    MerchantBuilder() {
+    private final MerchantRecord merchantRecord;
+    private final Long sequenceNumber;
+
+    public MerchantBuilder(MerchantRecord merchantRecord, Long sequenceNumber) {
+        this.merchantRecord = merchantRecord;
+        this.sequenceNumber = sequenceNumber;
     }
 
-    public abstract MerchantEntity build();
+    @Override
+    public MerchantEntity build() {
+        MerchantEntity.MerchantEntityBuilder builder = MerchantEntity.builder()
+                .merchantSeq(sequenceNumber)
+                .merchantId(merchantRecord.getMerchantId())
+                .tradeName(merchantRecord.getTradeName())
+                .document(merchantRecord.getCnpj())
+                .documentType(merchantRecord.getTypeDocument())
+                .registrationDate(merchantRecord.getDate())
+                .registrationHour(merchantRecord.getSchedule());
 
+        return builder.build();
+    }
 }
