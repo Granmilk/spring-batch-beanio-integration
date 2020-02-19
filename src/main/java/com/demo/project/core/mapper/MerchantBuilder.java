@@ -6,17 +6,14 @@ import com.demo.project.core.identification.merchant.MerchantRecord;
 public class MerchantBuilder extends IdentificationBuilder {
 
     private final MerchantRecord merchantRecord;
-    private final Long sequenceNumber;
 
-    public MerchantBuilder(MerchantRecord merchantRecord, Long sequenceNumber) {
+    public MerchantBuilder(MerchantRecord merchantRecord) {
         this.merchantRecord = merchantRecord;
-        this.sequenceNumber = sequenceNumber;
     }
 
     @Override
     public MerchantEntity build() {
         MerchantEntity.MerchantEntityBuilder builder = MerchantEntity.builder()
-                .merchantSeq(sequenceNumber)
                 .merchantId(merchantRecord.getMerchantId())
                 .tradeName(merchantRecord.getTradeName())
                 .document(merchantRecord.getCnpj())

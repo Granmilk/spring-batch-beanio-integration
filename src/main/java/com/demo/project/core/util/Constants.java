@@ -18,11 +18,4 @@ public final class Constants {
 
     }
 
-    public static class IdentificationSequenceName {
-
-        private IdentificationSequenceName() {
-        }
-
-        public static final String MERCHANT = "SQ_MERCH";
-    }
 }

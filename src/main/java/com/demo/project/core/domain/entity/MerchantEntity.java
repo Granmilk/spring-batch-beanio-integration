@@ -1,7 +1,8 @@
 package com.demo.project.core.domain.entity;
 
-import com.demo.project.core.util.Constants;
-import lombok.Setter;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import lombok.experimental.SuperBuilder;
 
 import javax.persistence.*;
@@ -10,17 +11,12 @@ import java.io.Serializable;
 
 @Entity
 @SuperBuilder
+@AllArgsConstructor
+@NoArgsConstructor
 @Table(name = "MERCHANT")
-@SequenceGenerator(name = "merchantSeq",
-        sequenceName = Constants.IdentificationSequenceName.MERCHANT,
-        allocationSize = 1)
 public class MerchantEntity implements Serializable {
 
     @Id
-    @Setter
-    @Column(name = "CD_SEQ_MERCHANT")
-    private Long merchantSeq;
-
     @Column(name = "CD_MERCHANT")
     protected String merchantId;
 

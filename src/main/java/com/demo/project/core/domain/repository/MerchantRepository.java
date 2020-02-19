@@ -1,4 +1,4 @@
-package com.demo.project.core.repository;
+package com.demo.project.core.domain.repository;
 
 import com.demo.project.core.domain.entity.MerchantEntity;
 import org.springframework.data.jpa.repository.JpaRepository;

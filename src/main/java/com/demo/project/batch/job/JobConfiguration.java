@@ -5,7 +5,7 @@ import com.demo.project.core.identification.merchant.IdentificationRecord;
 import com.demo.project.core.service.ServiceFactory;
 import org.springframework.batch.core.Job;
 import org.springframework.batch.core.Step;
-import org.springframework.batch.core.configuration.annotation.DefaultBatchConfigurer;
+import org.springframework.batch.core.configuration.annotation.EnableBatchProcessing;
 import org.springframework.batch.core.configuration.annotation.JobBuilderFactory;
 import org.springframework.batch.core.configuration.annotation.JobScope;
 import org.springframework.batch.item.ItemProcessor;
@@ -14,7 +14,8 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-public class JobConfiguration extends DefaultBatchConfigurer {
+@EnableBatchProcessing
+public class JobConfiguration {
 
     private final JobBuilderFactory jobBuilderFactory;
 

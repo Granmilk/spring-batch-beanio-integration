@@ -21,9 +21,4 @@ public class AddressRecord extends RegisterDataRecord {
         return recordId;
     }
 
-    @Field(maxLength = 8, required = true, ordinal = 2)
-    public String getMerchantId() {
-        return merchantId;
-    }
-
 }
